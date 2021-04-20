@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//npm i element-ui -S
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 //npm install --save axios
 // 设置反向代理，前端请求默认发送到 http://localhost:8443/api
 var axios = require('axios')
@@ -12,6 +16,8 @@ axios.defaults.baseURL = 'http://localhost:8333/api/'
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
+
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({
