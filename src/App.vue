@@ -18,6 +18,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* 导致网页背景图片上方有空白的罪魁祸首 */
+  /* margin-top: 60px; */
 }
 </style>
