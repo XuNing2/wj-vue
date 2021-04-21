@@ -13,6 +13,7 @@
       </el-form-item>
       <el-form-item style="width: 100%">
         <el-button type="primary" style="width: 100%;background: #505458;border: none" v-on:click="login">登录</el-button>
+        <router-link to="register"><el-button type="primary" style="width: 40%;background: #505458;border: none">注册</el-button></router-link>
       </el-form-item>
     </el-form>
   </body>
@@ -25,8 +26,8 @@
     data () {
       return {
         loginForm: {
-          username: 'root',
-          password: '123456'
+          username: '',
+          password: ''
         },
         responseResult: []
       }
@@ -44,9 +45,12 @@
             if (successResponse.data.code === 200) {
               // var data = this.loginForm
               _this.$store.commit('login', _this.loginForm)
-              
               var path = this.$route.query.redirect
               this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
+            }
+            else
+            {
+                this.$alert( successResponse.data.message)
             }
           })
           .catch(failResponse => {

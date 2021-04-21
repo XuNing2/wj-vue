@@ -50,6 +50,11 @@ export default new Router({
     meta: {
       requireAuth: true
     }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../components/Register')
   }
   ]
 })

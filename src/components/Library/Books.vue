@@ -118,6 +118,8 @@
     }
   }
 </script>
+
+
 <style scoped>
 
   .cover {
